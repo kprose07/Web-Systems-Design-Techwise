@@ -20,17 +20,19 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, toggleComplete, deleteTodo, e
   };
 
   return (
-    <div>
+    <div className='listitem'>
       <input
         type="checkbox"
         checked={todo.completed}
         onChange={() => toggleComplete(todo.id)}
       />
-      <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+      <span className='textitem' style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
         {todo.description}
       </span>
-      <button onClick={handleEdit}>Edit</button>
-      <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+      <div className="btns">
+      <button className='Editbtn' onClick={handleEdit}>Edit</button>
+      <button className='Deletebtn' onClick={() => deleteTodo(todo.id)}>Delete</button>
+      </div>
     </div>
   );
 };

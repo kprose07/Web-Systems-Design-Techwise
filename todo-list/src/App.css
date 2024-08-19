@@ -3,6 +3,7 @@ body{
   background-image: url("https://images.pexels.com/photos/196664/pexels-photo-196664.jpeg?auto=compress&cs=tinysrgb&w=600");
   background-position: center;
   background-size: cover;
+  background-color: #000;
   display: flex;
   flex-direction: column;
   justify-content:baseline;
@@ -15,6 +16,7 @@ body{
   font-optical-sizing: auto;
   font-weight: 400; /* Adjust the weight between 100 and 400 */
   font-style: normal; /* Use 'italic' for italic style */
+  color: #b10a0a;
 }
 
 .montserrat-text {
@@ -31,7 +33,7 @@ body{
   overflow-y: auto;
   background-color: #fffffffe;
   padding: 30px;
-  box-shadow:0 0 0.75rem #0f410f;
+  /* box-shadow:0 0 0.75rem #0f410f; */
   border-radius: 15px;
 }
 .container h1{
@@ -49,8 +51,9 @@ body{
   border-radius: 20px;
   width: 100%;
   max-width:200px;
-  border-color: #457136;
+  border: solid 2px #457136;
   outline: none;
+  color: #d97272;
 }
 .todoForm ::placeholder{
   color:#b0b7b0;
@@ -59,6 +62,8 @@ body{
 .todoForm button{
   background-color: #ff2d2d;
   color: #fff;
+  outline: none;
+  border: none;
 }
 .todoForm button:hover{
   background-color: #fff;
@@ -67,6 +72,53 @@ body{
 }
 .todoList{
   margin-top: 5%;
+}
+.Editbtn{
+  background-color: #fff;
+  color: #457136;
+  border: solid 2px #457136;
+}
+.Deletebtn{
+  background-color: #fff;
+  color: #457136;
+  border: solid 2px #457136;
+}
+.Editbtn:hover{
+  color: #fff;
+  background-color: #457136;
+
+}
+.Deletebtn:hover{
+  color: #fff;
+  background-color: #457136;
+
+}
+.btns{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  column-gap: 10px;
+}
+.textitem{
+  margin: 0px;
+  color: #b10a0a;
+  font-weight: 600;
+  /* margin-right: 30px; */
+  /* text-align: center;
+  height: max-content;
+  padding: 0px; */
+}
+.listitem{
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items:  center;
+  margin-bottom: 10px;
+  width: 95%;
+  /* border: solid 3px black; */
 }
 /* Custom scrollbar for WebKit browsers */
 .container::-webkit-scrollbar {

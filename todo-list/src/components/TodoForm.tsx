@@ -23,8 +23,9 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Enter a new todo"
         className='montserrat-text'
+        id="InputSelect"
       />
-      <button type="submit" className='montserrat-text'>Add Todo</button>
+      <button id="add" type="submit" className='montserrat-text'>Add Todo</button>
     </form>
   );
 };
