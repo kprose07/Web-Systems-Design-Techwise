@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 
 //css
 import './App.css';
+
 interface Todo {
   id: number;
   description: string;
@@ -11,7 +12,16 @@ interface Todo {
 }
 
 const App: React.FC = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  // Initialize state with todos from local storage
+  const [todos, setTodos] = useState<Todo[]>(() => {
+    const savedTodos = localStorage.getItem('todos');
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
+
+  // local storage 
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = (description: string) => {
     const newTodo = {
@@ -40,7 +50,6 @@ const App: React.FC = () => {
 
   return (
     <div className='container montserrat-text'>
-      
       <h1 className='playwrite'>Rose Todo List</h1>
       <TodoForm addTodo={addTodo} />
       <TodoList
